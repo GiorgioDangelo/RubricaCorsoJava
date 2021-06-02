@@ -50,7 +50,7 @@ public class ContactListTableModel extends AbstractTableModel {
     }
 
 	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
+	public Object getValueAt(final int rowIndex, int columnIndex) {
 		switch (columnIndex) {
         case 0: return contacts.get(rowIndex).getId();
         case 1: return contacts.get(rowIndex).getName();

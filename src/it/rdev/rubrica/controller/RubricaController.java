@@ -40,4 +40,15 @@ public class RubricaController {
 		return false;
 	}
 
+	public boolean updateContact(Contact c) {
+		try {
+			return dao.update(c);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+		
+	}
+
 }

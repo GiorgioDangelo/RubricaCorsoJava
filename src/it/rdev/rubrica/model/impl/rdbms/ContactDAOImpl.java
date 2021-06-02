@@ -82,6 +82,7 @@ public class ContactDAOImpl extends AbstractDAO<Contact, BigInteger> implements 
 	private void insertEmailAndPhone(Contact c, Integer id) throws SQLException {
 		// Per evitare di effettuare una INSERT per ogni email e numero di telefono
 		// creo due insert multiple
+		
 		if( c.getEmails() != null ) {
 			Object[] emailsParam = new Object[c.getEmails().size() * 2];
 			Iterator<String> emailIt = c.getEmails().iterator();
@@ -93,6 +94,7 @@ public class ContactDAOImpl extends AbstractDAO<Contact, BigInteger> implements 
 				sb.append("(?, ?)");
 				emailsParam[i++] = emailIt.next();
 				emailsParam[i++] = id;
+
 			}
 			this.executeUpdate(sb.toString(), emailsParam);
 		}
